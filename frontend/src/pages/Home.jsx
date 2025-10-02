@@ -145,7 +145,7 @@ const Home = () => {
           <Typography variant="h5" fontWeight={700} color="#0A400C">
             My Tasks
           </Typography>
-          <Button
+          { user?.role==='admin'&& (<Button
             onClick={() => setIsOpen(true)}
             variant="contained"
             sx={{
@@ -154,7 +154,7 @@ const Home = () => {
             }}
           >
             + Add Task
-          </Button>
+          </Button>)}
         </Stack>
 
         {tasks?.length > 0 ? (

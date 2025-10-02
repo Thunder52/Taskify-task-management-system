@@ -20,7 +20,7 @@ const Login = () => {
         const token=res.data.token;
         localStorage.setItem('token',token);
         enqueueSnackbar(res.data.message,{variant:'success'});
-        navigate('/');
+        navigate('/home');
     } catch (error) {
         console.log(error);
         enqueueSnackbar(error.response.data.message,{variant:'error'});

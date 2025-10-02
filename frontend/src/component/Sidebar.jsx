@@ -3,8 +3,15 @@ import { CgNotes } from "react-icons/cg";
 import { MdLabelImportant } from "react-icons/md";
 import { FaCheckDouble } from "react-icons/fa";
 import { TbNotebookOff } from "react-icons/tb";
+import { useNavigate } from 'react-router-dom';
 
 const Sidebar = ({ username, email,role,setLink }) => {
+const navigate=useNavigate();
+
+  const handleLogout=()=>{
+    localStorage.removeItem('token');
+    navigate('/');
+  }
   return (
     <Stack
       direction="column"
@@ -55,6 +62,7 @@ const Sidebar = ({ username, email,role,setLink }) => {
         flex={1}
         display="flex"
         alignItems="center"
+        onClick={handleLogout}
         justifyContent="center"
         sx={{ backgroundColor: "#0A400C", color: "white", cursor: "pointer" }}
       >
